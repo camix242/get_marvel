@@ -1,0 +1,22 @@
+uuid: fc422f16-a0df-4a42-8f3e-3f090e13ebaa
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.marvel_content
+id: node.marvel_content.promote
+field_name: promote
+entity_type: node
+bundle: marvel_content
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

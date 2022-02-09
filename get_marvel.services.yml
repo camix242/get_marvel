@@ -1,0 +1,7 @@
+services:
+  get_marvel.utilities:
+    class: Drupal\get_marvel\MarvelService
+    arguments: ['@entity_type.manager', '@config.factory' ]
+
+  get_marvel.data:
+    class: Drupal\get_marvel\ConfigMarvel

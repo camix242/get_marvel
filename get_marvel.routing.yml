@@ -1,0 +1,38 @@
+get_marvel.setconfig:
+  path: '/admin/config/services/get-marvel/data'
+  defaults:
+    _title: 'Configuración base del módulo Get Marvel'
+    _form: 'Drupal\get_marvel\Form\FormGetMarvelConfig'
+  requirements:
+    _permission: 'access config marvel'
+  options:
+    _admin_route: TRUE
+
+get_marvel.setendpoints:
+  path: '/admin/config/services/get-marvel/endpoints'
+  defaults:
+    _title: 'Configuración de los Endpoints Get Marvel'
+    _form: 'Drupal\get_marvel\Form\FormGetMarvelEndPoints'
+  requirements:
+    _permission: 'access config marvel'
+  options:
+    _admin_route: TRUE
+
+
+get_marvel.getdata:
+  path: '/marvel-content'
+  defaults:                                                                                                                                                              
+    _title: 'Marvel Content'                                                                                                                             
+    _controller: '\Drupal\get_marvel\Controller\GetMarvelController::getDataMarvel'
+  requirements:
+    _permission: 'access content'
+
+
+
+get_marvel.vorte_link_callback:
+  path: '/ajax-fav-callback/{entity}/{id}'
+  defaults:
+    _controller: '\Drupal\get_marvel\Controller\GetMarvelController::setFavCallback'
+  requirements:
+    _permission: 'access content'
+    # nojs: 'nojs|ajax'

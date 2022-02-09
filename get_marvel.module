@@ -1,0 +1,131 @@
+<?php
+
+use Drupal\node\Entity\Node;
+use Drupal\views_infinite_scroll\Plugin\views\pager\InfiniteScroll;
+
+/**
+ * @file
+ * Contains block_catalogue.module.
+ */
+
+//use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_themes().
+ */
+
+function get_marvel_theme($existing, $type, $theme, $path) {
+  return array(
+    'getdata' => [
+      'variables' => ['data' => NULL],
+    ],
+
+  );
+}
+
+
+// function get_marvel_menu_local_tasks_alter(&$data, $route_name, \Drupal\Core\Cache\RefinableCacheableDependencyInterface &$cacheability) {
+
+//   if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    
+//     if (!is_object($node)) {
+//       $node = Node::load($node);
+//     }
+    
+//     if ($node->bundle() !== 'top') {
+
+//       if ( isset($data['tabs'][0]['get_marvel.node.top_list'])) {
+//         $data['tabs'][0]['get_marvel.node.top_list']['#access'] = FALSE;
+//       }
+
+//       if ( isset($data['tabs'][0]['get_marvel.node.top_vote'])) {
+//         $data['tabs'][0]['get_marvel.node.top_vote']['#access'] = FALSE;
+//       }
+//     } else if (!\Drupal::service('get_marvel.utilities')->voteTimeAvalible($node) || \Drupal::currentUser()->isAnonymous()){
+//       if ( isset($data['tabs'][0]['get_marvel.node.top_vote'])) {
+//         $data['tabs'][0]['get_marvel.node.top_vote']['#access'] = FALSE;
+//       }
+//     }
+    
+//   }
+// }
+
+
+// function get_marvel_form_alter(&$form, $form_state, $form_id) {
+ 
+//   //Disabled some field in the edition form in Top type content   
+
+//   if ($node = \Drupal::routeMatch()->getParameter('node')) {
+//     $database = \Drupal::database();
+
+//     $nid = $node;
+//     if (is_object($node)) {
+//       $nid = $node->id();
+//     }
+//   }
+
+//   if ($form_id == "node_top_edit_form") {
+ 
+ 
+//     if (\Drupal::service('get_marvel.utilities')->validateTopRelationship($database, $nid) != 0) {
+      
+//       $form['field_top']['#disabled'] = true; // Top List
+//       $form['field_type']['#disabled'] = true; // Tipo de top
+//       \Drupal::messenger()->addMessage('Se deshabilitan los campos List y Tipo', 'warning');
+//     }
+    
+//     if (\Drupal::service('get_marvel.utilities')->validateTopVotes($database, $nid) != 0) {
+//       $form['field_bool_voting']['#disabled'] = true; //Voting
+//       \Drupal::messenger()->addMessage('Se deshabilita el campo votación', 'warning');
+//     } else {
+      
+//       if (isset($form['field_date_b']['widget'][0] ["value"])) {
+//         date_default_timezone_set('America/Bogota'); 
+//         $current_timestamp = \Drupal::time()->getCurrentTime();
+//         $field_date_b = $form['field_date_b']['widget'][0] ["value"] ["#default_value"]->getTimestamp();
+        
+//         // if ($field_date_b < $current_timestamp) {
+//         //   // $form['field_bool_voting']['#access'] = false; //Voting
+//         //   // $form['field_date_b']['#access'] = false; //Date Publish
+//         //   \Drupal::messenger()->addMessage('Se ocultan campos de voting y Date publish', 'warning');
+//         // }
+//       }
+
+//     }
+//   } else if ($form_id == "node_song_edit_form" || $form_id == "node_album_edit_form" || $form_id == "node_artist_edit_form") {
+//     $result = \Drupal::service('get_marvel.utilities')->validateItemRelation($database, $nid);
+//     if ( count($result) > 0 ) {
+      
+//       // die('plop');
+
+//       $form['actions']['delete']['#access'] = FALSE;
+//       \Drupal::messenger()->addMessage('Este contenido no se puede borrar, está relacionado con '. count($result) .' Tops', 'warning');
+//     }
+//   }
+// }
+
+
+// function get_marvel_preprocess_page(&$variables) {                                                                                                          
+                                                                                                              
+//   $current_uri = \Drupal::request()->getRequestUri();
+//   if ( strpos($current_uri, '/top') !== false ) {
+//     $variables['#attached']['library'][] = 'get_marvel/get_marvel.top_styling_basic';
+//   }
+// }
+
+
+//function block_decoupled_attachments(array &$attachments) {
+//  $attachments['#attached']['library'][] =
+//   'block_banner/lib/owlcarousel/owl.carousel.js';
+//}
+
+/**
+ * Implements hook_help().
+ */
+//function block_twenty_july_help($route_name, $route_match) {
+//    switch ($route_name) {
+//        case 'help.page.block_novedades':
+//                return ('Esta es la páina de ayuda de bloque novedades');
+//    }
+//}
+

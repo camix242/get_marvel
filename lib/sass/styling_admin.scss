@@ -1,0 +1,17 @@
+@import 'variables';
+
+#endpoints-fieldset-wrapper {
+  .fieldset-wrapper {
+    display:flex;
+    flex-direction: column;
+    .endpoints-row {
+      width: 100%;
+      display:flex;
+      flex-direction: row;
+      border-bottom: 1px solid #c0c0c0;
+      .form-type-textfield, .form-type-url {
+        width: 50%;
+      }
+    }
+  }
+}

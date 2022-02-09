@@ -1,0 +1,6 @@
+get_marvel.setconfig:
+  title: 'Configuración Get Marvel'
+  description: 'Establecer configuración Get Marvel'
+  route_name: get_marvel.setconfig
+  weight: 120
+  parent: system.admin_config_services

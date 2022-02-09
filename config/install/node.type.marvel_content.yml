@@ -1,0 +1,17 @@
+uuid: fdc7a530-55fd-4fe6-9434-eb1a1d9834b8
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Contenido Favorito Marvel'
+type: marvel_content
+description: 'Content type that can be used to add data from <em>Marvel Api</em> page.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

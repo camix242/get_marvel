@@ -1,0 +1,29 @@
+uuid: c235a93d-79ea-484d-8657-4047ee8519bc
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.marvel_content.field_description_mv
+    - field.field.node.marvel_content.field_id_mv
+    - field.field.node.marvel_content.field_path_thumbnail_mv
+    - field.field.node.marvel_content.field_resource_uri
+    - node.type.marvel_content
+  module:
+    - user
+id: node.marvel_content.teaser
+targetEntityType: node
+bundle: marvel_content
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_description_mv: true
+  field_id_mv: true
+  field_path_thumbnail_mv: true
+  field_resource_uri: true
+  langcode: true

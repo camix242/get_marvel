@@ -1,0 +1,11 @@
+get_marvel.setconfig:
+  route_name: get_marvel.setconfig
+  base_route: system.admin_config_services
+  title: 'Settings'
+  weight: 100
+
+get_marvel.endpoint:
+  route_name: get_marvel.setendpoints
+  base_route: system.admin_config_services
+  title: 'Tipo de Entidades (Endpoints)'
+  weight: 200

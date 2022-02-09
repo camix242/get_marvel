@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Tables for tops conf
+ */
+
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_install().
+ *
+ * @throws \Exception
+ */
+function radionics_tops_install() {
+  try {
+    $database = Database::getConnection();
+    $schema = $database->schema();
+    $serviceData = Drupal::service('radionics_tops.data');
+    // Prepare structure.
+    $schema->createTable($serviceData->getTableRelations(), $serviceData->getRelationsStructure());
+    $schema->createTable($serviceData->getTableVotes(), $serviceData->getVotesStructure());
+
+  } catch (Exception $ex) {
+    Drupal::logger('radionics_tops')->error($ex->getMessage());
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function radionics_tops_uninstall() {
+  try {
+    $serviceData = Drupal::service('radionics_tops.data');
+    $schema = Database::getConnection()->schema();
+    $schema->dropTable($serviceData->getTableRelations());
+    $schema->dropTable($serviceData->getTableVotes());
+  }
+  catch (Exception $ex) {
+    Drupal::logger('radionics_tops')->error($ex->getMessage());
+  }
+}

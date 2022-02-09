@@ -1,0 +1,21 @@
+uuid: cde87d73-3000-4469-83cf-ea29dbd23d8d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description_mv
+    - node.type.marvel_content
+  module:
+    - text
+id: node.marvel_content.field_description_mv
+field_name: field_description_mv
+entity_type: node
+bundle: marvel_content
+label: 'Descripción MV'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

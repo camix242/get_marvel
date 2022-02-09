@@ -1,0 +1,12 @@
+name: Get Marvel
+description: Get information from Malvel API.
+core_version_requirement: ^8 || ^9
+type: module
+package: Modules custom IZERTIS
+version: '1.0'
+dependencies:
+  - node
+
+project: get_marvel
+'interface translation project': get_marvel
+'interface translation server pattern': modules/custom/get_marvel/translations/get_marvel-es.po

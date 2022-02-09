@@ -1,0 +1,29 @@
+get_marvel.view_data:
+  css:
+    theme:
+      lib/css/view_marvel.css: {}
+      # lib/js/owl_carousel/assets/owl.carousel.css: {}
+  js:
+    # lib/js/owl_carousel/owl.carousel.min.js: {}
+    lib/js/view_marvel.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+get_marvel.bootstrap_cdn:
+  js:
+    //cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js: {}
+  css:
+    component:
+      //cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css: {}
+
+get_marvel.bootswatch:
+  css:
+    theme:
+      lib/css/bootstrap.min.css: {}
+
+get_marvel.styling_admin:
+  css:
+    theme:
+      lib/css/styling_admin.css: {}

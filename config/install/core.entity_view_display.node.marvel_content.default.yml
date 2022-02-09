@@ -1,0 +1,62 @@
+uuid: c7f076d9-0a54-485a-a42d-bb95db31d3d3
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.marvel_content.field_description_mv
+    - field.field.node.marvel_content.field_id_mv
+    - field.field.node.marvel_content.field_path_thumbnail_mv
+    - field.field.node.marvel_content.field_resource_uri
+    - node.type.marvel_content
+  module:
+    - link
+    - text
+    - user
+id: node.marvel_content.default
+targetEntityType: node
+bundle: marvel_content
+mode: default
+content:
+  field_description_mv:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_id_mv:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_path_thumbnail_mv:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_resource_uri:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

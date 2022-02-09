@@ -1,0 +1,23 @@
+uuid: 5892802a-95bc-4085-9a9e-7629b2f832bd
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_id_mv
+    - node.type.marvel_content
+id: node.marvel_content.field_id_mv
+field_name: field_id_mv
+entity_type: node
+bundle: marvel_content
+label: 'ID MV'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

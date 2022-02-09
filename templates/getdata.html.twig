@@ -1,0 +1,92 @@
+<div class="row container-marvel-content m-0 p-0">
+
+    <div class="header-marvel col-12 p-0 section-scroll" id="scroll-start">
+
+    </div>
+    <nav class="nav-endpoints navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            {% for key, endpoint in data.endpoints %}
+              <li class="nav-item">
+                {% if loop.first %}
+                  <input type="hidden" id="identity" value="{{endpoint.entity|trim}}">
+                  <button class="btn btn-primary get-entity-collection" 
+                {% else %}
+                  <button class="btn btn-secondary get-entity-collection" 
+                {% endif %}
+                  aria-current="true" data-entity="{{endpoint.entity|trim}}" href="{{endpoint.label}}">
+
+                  {{endpoint.label}}
+                </button>
+              </li>
+            {% endfor %}
+           </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content-marvel col-12  row g-0">
+    
+        {% for key, item in data.response.data.results %}
+        <div class="col-12 col-lg-4" >
+          <div class="card text-white bg-primary mb-3">
+            <div class="card-header">{{item.name}} {{item.title}} (ID:{{item.id}})</div>
+            <div class="card-body">
+              <div class="col-12 card-fav d-flex justify-content-center">
+                <button type="button" class="btn btn-outline-light set-fav" data-id="{{item.id}}"> 
+                  + Favoritos
+                </button>
+              </div>
+              <div class="col-12 px-3 card-img">
+                <img class="img-fluid" loading="lazy" alt ="thumbnail-{{item.id}}"src="{{item.thumbnail.path}}.{{item.thumbnail.extension}}">
+              </div>
+              <p class="card-text">{{item.description|raw}}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="footer-marvel col-12 d-flex justify-content-center">
+      <button type="button" class="btn btn-success add-more">Ver Más</button>
+      <input type="hidden" id="offset" value="30">
+    </div>
+</div>
+
+<div id="overlay" class="d-none">
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="spinner-border text-light" style="width: 3rem; height: 3rem;" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-grow text-light" style="width: 3rem; height: 3rem;" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Resultado</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div>
+  </div>
+</div>

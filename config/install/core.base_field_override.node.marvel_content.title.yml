@@ -1,0 +1,18 @@
+uuid: 3965654c-5786-4944-af8e-a821b7194189
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.marvel_content
+id: node.marvel_content.title
+field_name: title
+entity_type: node
+bundle: marvel_content
+label: 'Título / Nombre'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
